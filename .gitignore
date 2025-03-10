@@ -8,6 +8,13 @@ allure-results/*
 !allure-results/
 !allure-results/**/
 *.http
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.idea/.gitignore
+.idea/material_theme_project_new.xml
 
 ### Eclipse ###
 .apt_generated
