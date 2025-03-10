@@ -1,0 +1,43 @@
+target
+# Allure
+allure-report/
+allure-history/
+allure-results/*
+
+# Get Allure results only
+!allure-results/
+!allure-results/**/
+*.http
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.idea/.gitignore
+.idea/material_theme_project_new.xml
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
