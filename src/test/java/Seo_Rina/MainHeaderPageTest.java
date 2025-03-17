@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-public class FindingPageTest {
+public class MainHeaderPageTest {
     private static WebDriver driver;
 
     public static DriverRule factory = new DriverRule();
@@ -17,8 +17,8 @@ public class FindingPageTest {
     }
 
     @Test
-    public void checkIsItemCardIsOpenCorrectly() {
-        String itemId = new FindingPage(driver).openItemCard("туфли");
-        new FindingPage(driver).checkIsItemCardIsOpenCorrectly(itemId);
+    void checkIsJobButtonOpenJobPage() {
+        new MainHeaderPage(driver).clickOnButtonFindJob();
+        new WBJobPage(driver).checkIsWBJobPageOpen();
     }
 }
