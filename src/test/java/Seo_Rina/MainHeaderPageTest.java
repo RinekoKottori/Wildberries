@@ -42,4 +42,16 @@ public class MainHeaderPageTest {
         new MainHeaderPage(driver).clickOnAddress();
         new MainHeaderPage(driver).isAddressMenuOpen();
     }
+
+    @Test
+    void checkIsClickOnAviaButtonOpenTravelPage(){
+        new MainHeaderPage(driver).clickOnAvia();
+        new AviaWBPage(driver).checkIsAviaUrlOpen();
+    }
+
+    @Test
+    void checkIsClickOnSearchByPhotoButtonOpenWindow(){
+        new MainHeaderPage(driver).clickOnSearchByPhotoButton();
+        new MainHeaderPage(driver).isSearchByPhotoWindowOpen();
+    }
 }
