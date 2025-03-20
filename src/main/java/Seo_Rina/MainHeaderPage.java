@@ -18,6 +18,9 @@ public class MainHeaderPage {
     private final By logoWild = By.className("nav-element__logo");
     private final By address = By.className("simple-menu__link--address");
     private final By addressIncognito = By.className("j-b-add-address-popup");
+    private final By aviaUrl = By.className("j-avia");
+    private final By searchByPhotoButton = By.id("searchByImageFormAbNew");
+    private final By searchByPhotoWindow = By.className("upload-image-for-search-by-image-popup__header");
 
 
     @Step("Open browser")
@@ -73,4 +76,18 @@ public class MainHeaderPage {
         $(addressIncognito).shouldBe(visible);
     }
 
+    @Step("Click on avia")
+    public void clickOnAvia(){
+        $(aviaUrl).shouldBe(visible).click();
+    }
+
+    @Step("Click on search by photo button open search window")
+    public void clickOnSearchByPhotoButton(){
+        $(searchByPhotoButton).shouldBe(visible).click();
+    }
+
+    @Step("Check is window search by photo open")
+    public void isSearchByPhotoWindowOpen(){
+        $(searchByPhotoWindow).shouldBe(visible).shouldHave(exactText("Найти товары по фото"));
+    }
 }
