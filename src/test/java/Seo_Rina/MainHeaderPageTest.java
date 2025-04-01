@@ -54,4 +54,10 @@ public class MainHeaderPageTest {
         new MainHeaderPage(driver).clickOnSearchByPhotoButton();
         new MainHeaderPage(driver).isSearchByPhotoWindowOpen();
     }
+
+    @Test
+    void checkIsClickOnBasketIconOpenBasketPage(){
+        new MainHeaderPage(driver).clickOnBasketIcon();
+        new BasketPage(driver).isBasketPageOpen();
+    }
 }
