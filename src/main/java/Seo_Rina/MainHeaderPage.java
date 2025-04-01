@@ -21,6 +21,7 @@ public class MainHeaderPage {
     private final By aviaUrl = By.className("j-avia");
     private final By searchByPhotoButton = By.id("searchByImageFormAbNew");
     private final By searchByPhotoWindow = By.className("upload-image-for-search-by-image-popup__header");
+    private final By basketIcon = By.className("navbar-pc__icon--basket");
 
 
     @Step("Open browser")
@@ -90,4 +91,11 @@ public class MainHeaderPage {
     public void isSearchByPhotoWindowOpen(){
         $(searchByPhotoWindow).shouldBe(visible).shouldHave(exactText("Найти товары по фото"));
     }
+
+    @Step("Click on basket icon")
+    public void clickOnBasketIcon(){
+        $(basketIcon).shouldBe(visible).click();
+    }
+
+
 }
