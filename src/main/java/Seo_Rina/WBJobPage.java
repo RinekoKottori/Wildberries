@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.*;
 
 public class WBJobPage {
+
     private WebDriver driver;
     private final By mainPage = By.className("Home_welcomeBlockWrapper__h_RWh");
 
@@ -20,7 +21,7 @@ public class WBJobPage {
     }
 
     @Step("Check is WB job page open")
-    public void checkIsWBJobPageOpen(){
+    public void checkIsWBJobPageOpen() {
         String expectedUrl = "https://career.wb.ru/";
         switchTo().window(1);
         webdriver().shouldHave(url(expectedUrl));

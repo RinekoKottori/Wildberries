@@ -60,4 +60,11 @@ public class MainHeaderPageTest {
         new MainHeaderPage(driver).clickOnBasketIcon();
         new BasketPage(driver).isBasketPageOpen();
     }
+
+    @Test
+    void checkIsClickOnSellOnWBButtonOpensSellerPage(){
+        new MainHeaderPage(driver).clickOnSellOnWBButton();
+        new SellerWBPage(driver).isSellerWBPageOpen();
+    }
+
 }
