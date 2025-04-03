@@ -9,7 +9,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainHeaderPage {
-    public MainHeaderPage(WebDriver driver){}
+    public MainHeaderPage(WebDriver driver) {
+    }
+
     private final By mainPageCardList = By.className("main-page__content-wrapper");
     private final By searchField = By.id("searchInput");
     private final By findJobButton = By.cssSelector("a[data-wba-header-name='Job']");
@@ -22,6 +24,7 @@ public class MainHeaderPage {
     private final By searchByPhotoButton = By.id("searchByImageFormAbNew");
     private final By searchByPhotoWindow = By.className("upload-image-for-search-by-image-popup__header");
     private final By basketIcon = By.className("navbar-pc__icon--basket");
+    private final By sellOnWBButton = By.className("simple-menu__text-full");
 
 
     @Step("Open browser")
@@ -35,7 +38,7 @@ public class MainHeaderPage {
     }
 
     @Step("Send request in finding field")
-    public void  writeRequestInFindingField(String request) {
+    public void writeRequestInFindingField(String request) {
         $(searchField).shouldBe(visible).sendKeys(request);
         $(searchField).pressEnter();
     }
@@ -46,55 +49,61 @@ public class MainHeaderPage {
         $(searchField).clear();
     }
 
-    @Step ("Click on button 'Работа в WB'")
-    public void clickOnButtonFindJob(){
+    @Step("Click on button 'Работа в WB'")
+    public void clickOnButtonFindJob() {
         $(findJobButton).shouldBe(visible).click();
     }
 
     @Step("Click on button Catalog")
-    public void clickOnButtonCatalog(){
+    public void clickOnButtonCatalog() {
         $(buttonCatalog).shouldBe(visible).click();
     }
 
     @Step("Check is catalog open")
-    public void isCatalogOpen(){
+    public void isCatalogOpen() {
         $(buttonCatalog).shouldHave(cssClass("nav-element__burger--close"));
         $(mainCatalog).shouldBe(visible);
     }
 
     @Step("Click on logo 'Wildberries'")
-    public void clickOnLogo(){
+    public void clickOnLogo() {
         $(logoWild).shouldBe(visible).click();
     }
 
     @Step("Click on address")
-    public void clickOnAddress(){
+    public void clickOnAddress() {
         $(address).shouldBe(visible).click();
     }
 
     @Step("Check is address menu open")
-    public void isAddressMenuOpen(){
+    public void isAddressMenuOpen() {
         $(addressIncognito).shouldBe(visible);
     }
 
     @Step("Click on avia")
-    public void clickOnAvia(){
+    public void clickOnAvia() {
         $(aviaUrl).shouldBe(visible).click();
     }
 
     @Step("Click on search by photo button open search window")
-    public void clickOnSearchByPhotoButton(){
+    public void clickOnSearchByPhotoButton() {
         $(searchByPhotoButton).shouldBe(visible).click();
     }
 
     @Step("Check is window search by photo open")
-    public void isSearchByPhotoWindowOpen(){
+    public void isSearchByPhotoWindowOpen() {
         $(searchByPhotoWindow).shouldBe(visible).shouldHave(exactText("Найти товары по фото"));
     }
 
     @Step("Click on basket icon")
-    public void clickOnBasketIcon(){
+    public void clickOnBasketIcon() {
         $(basketIcon).shouldBe(visible).click();
+    }
+
+
+    @Step("Click on 'Продавайте на WB'")
+    public void clickOnSellOnWBButton() {
+        $(sellOnWBButton).shouldBe(visible).click();
     }
 
 
